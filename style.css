@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: rgb(247, 223, 30);
+  text-align: center;
+  font-size: 1.5em;
+  font-family: sans-serif;
+}
+
+button {
+  border: 1px solid;
+  padding: 2em;
+  margin-top: 2em;
+  background: black;
+  color: rgb(247, 223, 30);
+  outline-color: rgb(247, 223, 30);
+  box-shadow: 10px 10px 5px black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:active {
+  background: rgb(247, 223, 30);
+  color: black;
+  outline-color: black;
+}
+
+li {
+  list-style-type: none;
+}
+
+hr {
+  border: 1px solid black;
+}
+
+.exo {
+  border: 2px dashed black;
+  padding: 2%;
+}
+
+.enonce {
+  box-shadow: 10px 10px 20px 0 #000000;
+  padding: 2%;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.reponse {
+  padding: 5%;
+}
+
+.reponse:empty, #swap:empty, #show:empty {
+  display: none;
+}
+table{
+  margin: 100px auto;
+  border: 2px solid;
+  border-collapse: collapse;
+
+}
+
+th, th, td, tbody{
+  padding: 10px;
+  border: 2px solid;
+  border-collapse: collapse;
+}
