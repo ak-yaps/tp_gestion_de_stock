@@ -21,7 +21,7 @@ var saisirProduit = function() {
   document.getElementById("btnValider").onclick = function() {
 
     var p = new Produit({
-      reference: reference++,
+      reference: 'Ref ' + reference++,
       nom: nom.value,
       prix: prix.value,
       couleur: couleur.value,
@@ -30,7 +30,7 @@ var saisirProduit = function() {
 
     tbl.push(p);
 
-// créer un tableau
+    // créer un tableau
     for (var i = 0; i < tbl.length; i++) {
 
       var nouvelleLigne = document.querySelector("tbody").insertRow(-1);
@@ -52,16 +52,29 @@ var saisirProduit = function() {
 
       var colonne5 = nouvelleLigne.insertCell(5);
       colonne5.innerHTML += '<button class="btnSupp">Supprimer</button>'
+
+      var btnSupp = document.querySelectorAll('.btnSupp');
+      //console.log(btnSupp);
+
+// fonction Supprimer
+      for (var i = 0; i < btnSupp.length; i++) {
+        btnSupp[i].addEventListener("click", function(e) {
+          var target = e.target || e.srcElement;
+          var suppRow = target.parentNode.parentNode.rowIndex;
+          document.getElementById('table').deleteRow(suppRow);
+        })
+      }
+
     };
 
-// effacer les champs à chaque saisie
+    // effacer les champs à chaque saisie
     var input = document.querySelectorAll('input');
     for (var j = 0; j < input.length; j++) {
       input[j].value = input[j].defaultValue;
     };
-    
-// supprime l'élément précedent dans le tableau JS
-    tbl.splice(0,1);
+
+    // supprime l'élément précedent dans le tableau JS
+    tbl.splice(0, 1);
 
   };
 
