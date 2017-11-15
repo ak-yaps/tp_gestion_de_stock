@@ -53,18 +53,16 @@ var saisirProduit = function() {
       var colonne5 = nouvelleLigne.insertCell(5);
       colonne5.innerHTML += '<button class="btnSupp">Supprimer</button>'
 
-      var btnSupp = document.querySelectorAll('.btnSupp');
-      //console.log(btnSupp);
-
       // fonction Supprimer
-      for (var k = 0; k < btnSupp.length; k++) {
+      var btnSupp = document.querySelectorAll('.btnSupp');
+
+      for (var k = btnSupp.length - 1; k < btnSupp.length; k++) {
         btnSupp[k].addEventListener("click", function(e) {
           var target = e.target || e.srcElement;
-          var suppRow = target.parentNode.parentNode.rowIndex;
+          suppRow = target.parentNode.parentNode.rowIndex;
           document.getElementById('table').deleteRow(suppRow);
         })
       }
-
     };
 
     // effacer les champs à chaque saisie
