@@ -56,9 +56,9 @@ var saisirProduit = function() {
       var btnSupp = document.querySelectorAll('.btnSupp');
       //console.log(btnSupp);
 
-// fonction Supprimer
-      for (var i = 0; i < btnSupp.length; i++) {
-        btnSupp[i].addEventListener("click", function(e) {
+      // fonction Supprimer
+      for (var k = 0; k < btnSupp.length; k++) {
+        btnSupp[k].addEventListener("click", function(e) {
           var target = e.target || e.srcElement;
           var suppRow = target.parentNode.parentNode.rowIndex;
           document.getElementById('table').deleteRow(suppRow);
