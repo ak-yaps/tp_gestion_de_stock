@@ -30,28 +30,67 @@ var saisirProduit = function() {
 
     tbl.push(p);
 
+    //vérifier valeur des champs
+
+
+
+
+
+
+
+
+
     // créer un tableau
     for (var i = 0; i < tbl.length; i++) {
 
       var nouvelleLigne = document.querySelector("tbody").insertRow(-1);
 
-      var colonne0 = nouvelleLigne.insertCell(0);
-      colonne0.innerHTML += tbl[i].reference;
+      function verifNom() {
+        if (nom.value === "") {
+          console.log('Veuillez remplir le champ NOM');
+        } else {
+          var colonne0 = nouvelleLigne.insertCell(0);
+          colonne0.innerHTML += tbl[i].reference;
 
-      var colonne1 = nouvelleLigne.insertCell(1);
-      colonne1.innerHTML += tbl[i].nom;
+          var colonne1 = nouvelleLigne.insertCell(1);
+          colonne1.innerHTML += tbl[i].nom;
+        }
+      };
 
-      var colonne2 = nouvelleLigne.insertCell(2);
-      colonne2.innerHTML += tbl[i].prix + ' &euro;';
+      function verifPrix(e) {
+        if (isNaN(prix.value) === false && prix.value !== "" || typeof(prix.value) === 'number') {
+          var colonne2 = nouvelleLigne.insertCell(2);
+          colonne2.innerHTML += tbl[i].prix + ' &euro;';
+        } else {
+          console.log('nooooooon');
+        };
+      };
 
-      var colonne3 = nouvelleLigne.insertCell(3);
-      colonne3.innerHTML += tbl[i].couleur;
+      function verifCouleur() {
+        if (couleur.value === "") {
+          console.log('Veuillez remplir le champ COULEUR');
+        } else {
+          var colonne3 = nouvelleLigne.insertCell(3);
+          colonne3.innerHTML += tbl[i].couleur;
+        }
+      };
 
-      var colonne4 = nouvelleLigne.insertCell(4);
-      colonne4.innerHTML += tbl[i].poids;
+      function verifPoids() {
+        if (isNaN(poids.value) === false && poids.value !== "" || typeof(poids.value) === 'number') {
+          var colonne4 = nouvelleLigne.insertCell(4);
+          colonne4.innerHTML += tbl[i].poids;
 
-      var colonne5 = nouvelleLigne.insertCell(5);
-      colonne5.innerHTML += '<button class="btnSupp">Supprimer</button>'
+          var colonne5 = nouvelleLigne.insertCell(5);
+          colonne5.innerHTML += '<button class="btnSupp">Supprimer</button>';
+        } else {
+          console.log("veuillez entrez un nombre en gramme");
+        }
+      };
+
+      verifNom();
+      verifPrix();
+      verifCouleur();
+      verifPoids();
 
       // fonction Supprimer
       var btnSupp = document.querySelectorAll('.btnSupp');
@@ -79,4 +118,3 @@ var saisirProduit = function() {
 };
 
 saisirProduit();
-console.log(tbl);
