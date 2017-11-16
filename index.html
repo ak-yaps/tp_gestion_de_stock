@@ -10,7 +10,7 @@
 </head>
 <body>
   <h1>TP Gestion des stocks</h1>
-  <form id="formulaire">
+  <form id="formulaire" onsubmit="return verifForm()">
     <h2>Veuillez saisir un produit</h2>
     <label for="nom">Nom du produit</label><br><input type="text" name="nom" id="nom" required><br>
     <label for="prix">Prix</label><br><input type="text" name="prix" value="" id="prix"><br>
