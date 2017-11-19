@@ -2,6 +2,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   background: rgb(247, 223, 30);
   text-align: center;
@@ -35,9 +36,9 @@ button.btnSupp {
 }
 
 button.btnSupp:active {
-  background:  rgb(247, 223, 30);
-  color:  red;
-  outline-color:  red;
+  background: rgb(247, 223, 30);
+  color: red;
+  outline-color: red;
 }
 
 h1, h2 {
@@ -45,23 +46,38 @@ h1, h2 {
 }
 
 input {
-border: 1px solid black;
-border-radius: 5px;
-font-size: 1.2em;
-padding: 1%;
-margin: 3% auto;
-width: 40%;
-background: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1.2em;
+  padding: 1%;
+  margin: 3% auto;
+  background: transparent;
+  text-align: right;
 }
 
-table{
+input#btnValider {
+  background: black;
+  color: rgb(247, 223, 30);
+}
+
+input#btnValider:active {
+  background: rgb(247, 223, 30);
+  color: black;
+}
+
+label {
+  display: inline-block;
+  width: 20%;
+  text-align: left;
+}
+
+table {
   margin: 100px auto;
   border: 2px solid;
   border-collapse: collapse;
-
 }
 
-th, th, td, tbody{
+th, th, td, tbody {
   padding: 10px;
   border: 2px solid;
   border-collapse: collapse;
